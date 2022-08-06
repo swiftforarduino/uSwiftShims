@@ -1,0 +1,10 @@
+module uSwiftShims {
+  header "HeapObject.h"
+  header "GlobalObjects.h"
+  header "RuntimeShims.h"
+  header "Random.h"
+  header "LibcShims.h"
+  header "AVR.h"
+  header "uswiftRuntime.h"
+  export *
+}
