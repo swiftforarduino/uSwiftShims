@@ -26,6 +26,7 @@
 #ifdef LIBC_DEFINED
 #include <math.h>
 #include <time.h>
+#include <stdint.h>
 #endif
 
 #ifdef AVR_LIBC_DEFINED
@@ -41,7 +42,9 @@
 // #include <avr/io.h>
 #endif
 
-int float_to_int(float f);
+int16_t float_to_int16(float f);
+int32_t float_to_int32(float f);
+int64_t float_to_int64(float f);
 
 #if __has_feature(nullability)
 #pragma clang assume_nonnull begin
