@@ -54,6 +54,9 @@ const unsigned int _intFromProgmem(const unsigned char * __nonnull address);
 const unsigned long _dwordFromProgmem(const unsigned char * __nonnull address);
 const float _floatFromProgmem(const unsigned char * __nonnull address);
 
+// access callback for missing runtime function
+void set_runtime_handler_callback(void (* handler)());
+
 #endif
 
 #endif // SWIFT_AVR_H
