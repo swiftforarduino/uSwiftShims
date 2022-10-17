@@ -54,8 +54,9 @@ const unsigned int _intFromProgmem(const unsigned char * __nonnull address);
 const unsigned long _dwordFromProgmem(const unsigned char * __nonnull address);
 const float _floatFromProgmem(const unsigned char * __nonnull address);
 
-// access callback for missing runtime function
-void set_runtime_handler_callback(void (* handler)());
+// access callback for missing runtime function (unit test stub only, other runtime stubs has no effect)
+// void set_runtime_handler_callback(_Bool (* __nonnull handler)());
+// void clear_runtime_handler_callback();
 
 #endif
 
