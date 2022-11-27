@@ -19,21 +19,10 @@
 #include "Visibility.h"
 #include "SwiftStdint.h"
 #include "interrupt_helper.h"
+#include "debug_malloc.h"
 
 // use our AVR library one instead for defined semantics
 __swift_int32_t _longRandom();
-
-// ISR compatible variable access, see AVR headers for details.
-// _Bool _readSharedGlobalBool(_Bool test);
-// __swift_uint8_t _readSharedGlobalUInt8(__swift_uint8_t test);
-// __swift_int8_t _readSharedGlobalInt8(__swift_int8_t test);
-// __swift_uint16_t _readSharedGlobalUInt16(__swift_uint16_t test);
-// __swift_int16_t _readSharedGlobalInt16(__swift_int16_t test);
-// __swift_uint32_t _readSharedGlobalUInt32(__swift_uint32_t test);
-// __swift_int32_t _readSharedGlobalInt32(__swift_int32_t test);
-// __swift_uint64_t _readSharedGlobalUInt64(__swift_uint64_t test);
-// __swift_int64_t _readSharedGlobalInt64(__swift_int64_t test);
-// float _readSharedGlobalFloat(float test);
 
 #ifdef AVR_LIBC_DEFINED
 
@@ -55,7 +44,7 @@ const unsigned long _dwordFromProgmem(const unsigned char * __nonnull address);
 const float _floatFromProgmem(const unsigned char * __nonnull address);
 
 // access callback for missing runtime function (unit test stub only, other runtime stubs has no effect)
-// void set_runtime_handler_callback(_Bool (* __nonnull handler)());
+// void set_runtime_handler_callback(_Bool (* __nonnull handler)(const char *));
 // void clear_runtime_handler_callback();
 
 #endif

@@ -4,7 +4,10 @@ module uSwiftShims {
   header "RuntimeShims.h"
   header "Random.h"
   header "LibcShims.h"
-  header "AVR.h"
   header "uswiftRuntime.h"
+
+  /* should this header only be included in AVR runtime/stdlib builds? */
+  header "AVR.h"
+
   export *
 }
