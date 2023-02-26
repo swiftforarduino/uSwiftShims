@@ -1,4 +1,4 @@
-//===--- AVR.h - Wrapper for symbols linked from the AVR module ----*- C -*-===//
+//===--- IotaPlatform.h - Wrapper for symbols linked from the AVR module ----*- C -*-===//
 //
 // This source file is part of Swift for Arduino
 //
@@ -8,23 +8,26 @@
 //
 //===----------------------------------------------------------------------===//
 //
-//  A wrapper around AVR library functions.
+//  A wrapper around platform library functions.
 //
 //===----------------------------------------------------------------------===//
 
-#ifndef SWIFT_AVR_H
-#define SWIFT_AVR_H
+#ifndef IOTA_PLATFORM_H
+#define IOTA_PLATFORM_H
 
 #include "SwiftStddef.h"
 #include "Visibility.h"
 #include "SwiftStdint.h"
 #include "interrupt_helper.h"
-#include "debug_malloc.h"
 
 // use our AVR library one instead for defined semantics
 __swift_int32_t _longRandom();
 
 #ifdef AVR_LIBC_DEFINED
+
+// these functions and includes are only suitable for AVR
+
+#include "debug_malloc.h"
 
 #ifdef __clang_version__
 // Clang (we are parsing header files as bridging header)
@@ -49,4 +52,4 @@ const float _floatFromProgmem(const unsigned char * __nonnull address);
 
 #endif
 
-#endif // SWIFT_AVR_H
+#endif // IOTA_PLATFORM_H

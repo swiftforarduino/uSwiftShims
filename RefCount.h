@@ -1252,7 +1252,10 @@ class HeapObjectSideTableEntry {
     : object(newObject), refCounts()
   { }
 
-  void operator delete(void *ptr) { free(ptr); }
+  void operator delete(void *ptr) {
+    extern void free(void *);
+    free(ptr);
+  }
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
