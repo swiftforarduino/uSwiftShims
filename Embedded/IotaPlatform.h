@@ -34,13 +34,13 @@ __swift_int32_t _longRandom();
 #define __nonnull _Nonnull
 #define __nullable _Nullable
 
-void *swift_slowAlloc(size_t size, size_t alignMask);
-void swift_slowDealloc(void *ptr, size_t bytes, size_t alignMask);
+void * __nullable swift_slowAlloc(size_t size, size_t alignMask);
+void swift_slowDealloc(void * __nonnull ptr, size_t bytes, size_t alignMask);
 
 #else
 // GCC
-#define __nonnull 
-#define __nullable 
+#define __nonnull
+#define __nullable
 #endif
 
 // PGM direct access
