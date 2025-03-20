@@ -1,14 +1,13 @@
 module uSwiftShims {
-  header "HeapObject.h"
-  header "GlobalObjects.h"
   header "RuntimeShims.h"
-  header "EmbeddedShims.h"
   header "Random.h"
   header "LibcShims.h"
   header "uswiftRuntime.h"
+  header "EmbeddedShims.h"
+  header "GlobalObjects.h"
 
-  /* should this header only be included in AVR runtime/stdlib builds? */
-  header "AVR.h"
+  /* platform specific includes */
+  header "IotaPlatform.h"
 
   export *
 }
