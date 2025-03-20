@@ -40,13 +40,15 @@
 // likewise everything in the avr folder is unavailable because it
 // requires device type to be defined, which clang doesn't natively support
 // #include <avr/io.h>
+
+int16_t float_to_int16(float f);
+int32_t float_to_int32(float f);
+int64_t float_to_int64(float f);
+
 #endif
 
 // these stubs aren't needed for the 32 bit microswift standard library
 // it uses the standard Swift Standard Library float to int conversions
-// int16_t float_to_int16(float f);
-// int32_t float_to_int32(float f);
-// int64_t float_to_int64(float f);
 
 #if __has_feature(nullability)
 #pragma clang assume_nonnull begin
