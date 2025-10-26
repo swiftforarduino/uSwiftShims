@@ -38,11 +38,18 @@ typedef __typeof__(_Generic((__swift_size_t)0,                                 \
                             unsigned int : (int)0,                             \
                             unsigned short : (short)0,                         \
                             unsigned char : (signed char)0)) __swift_ssize_t;
-#elif defined(__cplusplus)
+
+// we don't use C++ headers here because C++ is not very well defined on AVR
+// this might be fixable...
+
+//#elif defined(__cplusplus)
 // #include <type_traits>
 // using __swift_ssize_t = std::make_signed<__swift_size_t>::type;
 #else
-#error "do not have __swift_ssize_t defined"
+// this is a poor hack to get the IDE running again for AVR...
+// not sure it will work on ARM
+#warning "falling back to unsigned int for __swift_ssize_t"
+typedef unsigned int __swift_ssize_t;
 #endif
 
 #endif // SWIFT_STDLIB_SHIMS_SWIFT_STDDEF_H
